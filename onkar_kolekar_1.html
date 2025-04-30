@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onkar Kolekar | AI/ML Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --primary: #00f0ff;
+            --secondary: #ff00f0;
+            --accent: #00ff9d;
+            --dark: #0a0a1a;
+            --light: #e0e0ff;
+            --neon-pink: #ff00f0;
+            --neon-blue: #00f0ff;
+            --neon-green: #00ff9d;
+            --neon-purple: #9d00ff;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+        }
+        
+        .cyber-card {
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 240, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        
+        .cyber-card:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+            border-color: var(--neon-pink);
+        }
+        
+        .skill-pill {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .skill-pill:hover {
+            transform: translateY(-3px);
+            background: rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+        
+        .project-card {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 240, 255, 0.4);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--neon-blue);
+            border: 3px solid var(--dark);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 33px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .neon-shadow {
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+        }
+        
+        .neon-border {
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+        }
+        
+        .typewriter {
+            border-right: 3px solid var(--neon-blue);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--neon-blue) }
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch::before {
+            color: var(--neon-pink);
+            animation: glitch-effect 3s infinite;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            color: var(--neon-green);
+            animation: glitch-effect 2s infinite reverse;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-effect {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .cyber-btn {
+            position: relative;
+            display: inline-block;
+            padding: 12px 24px;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            overflow: hidden;
+            transition: 0.5s;
+            border: 1px solid var(--neon-blue);
+            border-radius: 0;
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 40px var(--neon-blue);
+        }
+        
+        .cyber-btn:hover {
+            background: var(--neon-blue);
+            color: var(--dark);
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 40px var(--neon-blue), 0 0 80px var(--neon-blue);
+        }
+        
+        .cyber-btn span {
+            position: absolute;
+            display: block;
+        }
+        
+        .cyber-btn span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue));
+            animation: btn-anim1 2s linear infinite;
+        }
+        
+        @keyframes btn-anim1 {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+        
+        .cyber-btn span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, var(--neon-blue));
+            animation: btn-anim2 2s linear infinite;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes btn-anim2 {
+            0% { top: -100%; }
+            50%, 100% { top: 100%; }
+        }
+        
+        .cyber-btn span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, var(--neon-blue));
+            animation: btn-anim3 2s linear infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes btn-anim3 {
+            0% { right: -100%; }
+            50%, 100% { right: 100%; }
+        }
+        
+        .cyber-btn span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, var(--neon-blue));
+            animation: btn-anim4 2s linear infinite;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes btn-anim4 {
+            0% { bottom: -100%; }
+            50%, 100% { bottom: 100%; }
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.3;
+        }
+        
+        .terminal-text {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .cyber-loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid var(--neon-blue);
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        
+        .cyber-loader::after {
+            content: '';  
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--neon-pink);
+            width: 16px;
+            height: 16px;
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+        }
+        
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .holographic-effect {
+            background: linear-gradient(
+                135deg,
+                rgba(0, 240, 255, 0.1),
+                rgba(255, 0, 240, 0.1),
+                rgba(0, 255, 157, 0.1)
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .holographic-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 240, 255, 0),
+                rgba(0, 240, 255, 0),
+                rgba(0, 240, 255, 0.3)
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+        
+        .binary-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.05;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 240, 0.1) 0%, transparent 20%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(0, 240, 255, 0.1) 50px,
+                    rgba(0, 240, 255, 0.1) 51px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255, 0, 240, 0.1) 50px,
+                    rgba(255, 0, 240, 0.1) 51px
+                );
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 10, 26, 0.8);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
+        }
+        /* Contact Form Input Styling */
+    #contact input, 
+    #contact textarea {
+        color: black !important; /* Make entered text black */
+        background-color: rgba(255, 255, 255, 0.9) !important; /* Light background */
+    }
+
+    #contact input::placeholder,
+    #contact textarea::placeholder {
+        color: rgba(0, 0, 0, 0.6) !important; /* Placeholder text color */
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+        background-color: white !important; /* Focus state */
+        border-color: var(--neon-blue) !important;
+    }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="binary-bg"></div>
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md shadow-sm z-50 px-6 py-3 neon-border">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text flex items-center">
+                <i class="fas fa-robot mr-2"></i>Onkar Kolekar
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-gray-300 hover:text-neon-blue transition duration-300 font-medium">
+                    <i class="fas fa-home mr-1"></i>Home
+                </a>
+                <a href="#about" class="text-gray-300 hover:text-neon-blue transition duration-300 font-medium">
+                    <i class="fas fa-user mr-1"></i>About
+                </a>
+                <a href="#skills" class="text-gray-300 hover:text-neon-blue transition duration-300 font-medium">
+                    <i class="fas fa-code mr-1"></i>Skills
+                </a>
+                <a href="#projects" class="text-gray-300 hover:text-neon-blue transition duration-300 font-medium">
+                    <i class="fas fa-project-diagram mr-1"></i>Projects
+                </a>
+                <a href="#contact" class="text-gray-300 hover:text-neon-blue transition duration-300 font-medium">
+                    <i class="fas fa-envelope mr-1"></i>Contact
+                </a>
+                <a href="#contact" class="cyber-btn">
+                    <i class="fas fa-paper-plane mr-2"></i>Hire Me
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <button class="md:hidden text-gray-300 focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black/90 w-full absolute left-0 mt-3 py-2 shadow-lg rounded-b-lg neon-border" id="mobile-menu">
+            <a href="#home" class="block px-4 py-2 text-gray-300 hover:bg-blue-900/30">
+                <i class="fas fa-home mr-2"></i>Home
+            </a>
+            <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-blue-900/30">
+                <i class="fas fa-user mr-2"></i>About
+            </a>
+            <a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-blue-900/30">
+                <i class="fas fa-code mr-2"></i>Skills
+            </a>
+            <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-blue-900/30">
+                <i class="fas fa-project-diagram mr-2"></i>Projects
+            </a>
+            <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-blue-900/30">
+                <i class="fas fa-envelope mr-2"></i>Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-70"></div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0,_rgba(10,10,26,0.8)_100%)]"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 glitch" data-text="Hi, I'm Onkar Kolekar">
+                        Hi, I'm <span class="gradient-text">Onkar Kolekar</span>
+                    </h1>
+                    <div class="text-2xl md:text-3xl font-semibold mb-6 h-12 overflow-hidden neon-text">
+                        <div class="typewriter">AI/ML Engineer & Developer</div>
+                    </div>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Passionate about scalable machine learning and automation. Hands-on experience in Python, LLMs and deploying ML solutions to solve real-world problems.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="cyber-btn">
+                            <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <a href="#projects" class="border-2 border-neon-blue text-neon-blue px-6 py-3 rounded-full hover:bg-blue-900/20 transition duration-300 flex items-center neon-border">
+                            <i class="fas fa-eye mr-2"></i>View Projects
+                        </a>
+                    </div>
+                    <div class="mt-8 flex justify-center md:justify-start space-x-6">
+                        <a href="https://www.linkedin.com/in/onkar-kolekar-92371b2ba"" target="_blank" class="text-2xl text-gray-300 hover:text-neon-blue transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Onkar17-73" target="_blank" class="text-2xl text-gray-300 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:kolekaronkar073@gmail.com" class="text-2xl text-gray-300 hover:text-neon-pink transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-neon-blue shadow-xl floating neon-border">
+                        <img src="C:\Users\Omkar\Downloads\WhatsApp Image 2025-04-11 at 21.57.21_8c5b42e2.jpg" alt="Onkar Kolekar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -z-10 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-900/30 to-purple-900/30 opacity-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="absolute -bottom-6 -right-6 md:-right-12 bg-black/80 p-4 rounded-xl shadow-lg border border-neon-blue neon-border">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-neon-blue">8.56</div>
+                            <div class="text-sm text-gray-300">CGPA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+                    <i class="fas fa-user-tie mr-2"></i>About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-pink mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="cyber-card p-8 rounded-xl hover-scale">
+                    <h3 class="text-2xl font-bold mb-4 text-neon-blue">
+                        <i class="fas fa-graduation-cap mr-2"></i>Education
+                    </h3>
+                    <div class="space-y-6 relative pl-12 timeline">
+                        <div class="relative timeline-item">
+                            <h4 class="text-xl font-semibold text-gray-200">Vishwakarma Institute of Technology, Pune</h4>
+                            <p class="text-gray-400 mb-1">Bachelor of Technology - Computer Science and Engineering (AIML)</p>
+                            <p class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i>2021 - Present | CGPA: 8.56/10.0</p>
+                        </div>
+                        <div class="relative timeline-item">
+                            <h4 class="text-xl font-semibold text-gray-200">Namasaleb Mahadik Polytechnic Institute, Sangli</h4>
+                            <p class="text-gray-400 mb-1">Polytechnic Diploma</p>
+                            <p class="text-sm text-gray-500"><i class="fas fa-calendar-alt mr-1"></i>Percentage: 86.34%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="cyber-card p-8 rounded-xl mb-6 hover-scale">
+                        <h3 class="text-2xl font-bold mb-4 text-neon-blue">
+                            <i class="fas fa-trophy mr-2"></i>Achievements
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-medal text-yellow-400 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Won the internal hackathon for Smart India Hackathon</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-purple-400 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Runner-up in the Innovation Expo 2024 project competition at VIT Pune</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cyber-card p-8 rounded-xl hover-scale">
+                        <h3 class="text-2xl font-bold mb-4 text-neon-blue">
+                            <i class="fas fa-book mr-2"></i>Relevant Coursework
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-pill px-4 py-2 rounded-full text-sm">Data Structures</span>
+                            <span class="skill-pill px-4 py-2 rounded-full text-sm">OOP</span>
+                            <span class="skill-pill px-4 py-2 rounded-full text-sm">DBMS</span>
+                            <span class="skill-pill px-4 py-2 rounded-full text-sm">Operating Systems</span>
+                            <span class="skill-pill px-4 py-2 rounded-full text-sm">Computer Networks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900/50 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+                    <i class="fas fa-code mr-2"></i>Technical Skills
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-pink mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Languages -->
+                <div class="cyber-card p-8 rounded-xl hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-neon-blue text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fab fa-python text-blue-400 mr-2"></i>Python
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fab fa-java text-red-400 mr-2"></i>Java
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fab fa-js-square text-yellow-400 mr-2"></i>JavaScript
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-database text-blue-500 mr-2"></i>SQL
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="cyber-card p-8 rounded-xl hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-brain text-neon-purple text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200">Machine Learning & AI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill px-4 py-2 rounded-full">CNNs</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Transformer Models</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">LLMs (Hugging Face)</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Transfer Learning</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">PyTorch</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">TensorFlow</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Scikit-learn</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">OpenCV</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">MLflow</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Weights & Biases</span>
+                    </div>
+                </div>
+                
+                <!-- Developer Tools -->
+                <div class="cyber-card p-8 rounded-xl hover-scale">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-tools text-neon-green text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-200">Developer Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fab fa-git-alt text-orange-400 mr-2"></i>Git
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fab fa-github text-gray-200 mr-2"></i>GitHub
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-database text-blue-400 mr-2"></i>MySQL
+                        </span>
+                        <span class="skill-pill px-4 py-2 rounded-full">FastAPI</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Flask</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Google Colab</span>
+                        <span class="skill-pill px-4 py-2 rounded-full">Jupyter Notebook</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Science Stack -->
+            <div class="mt-8 cyber-card p-8 rounded-xl hover-scale">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
+                        <i class="fas fa-chart-line text-neon-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-200">Data Science Stack</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                        <i class="fas fa-table text-green-400 mr-2"></i>Pandas
+                    </span>
+                    <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                        <i class="fas fa-calculator text-blue-400 mr-2"></i>NumPy
+                    </span>
+                    <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                        <i class="fas fa-chart-bar text-orange-400 mr-2"></i>Matplotlib
+                    </span>
+                    <span class="skill-pill px-4 py-2 rounded-full flex items-center">
+                        <i class="fas fa-chart-pie text-red-400 mr-2"></i>Seaborn
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black/80 backdrop-blur-sm relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+                    <i class="fas fa-project-diagram mr-2"></i>Featured Projects
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-pink mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- MaternAI -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-pink-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-robot text-neon-pink text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">MaternAI</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-pink-900/30 text-pink-400 px-2 py-1 rounded">BioMistral</span>
+                                <span class="text-xs bg-pink-900/30 text-pink-400 px-2 py-1 rounded">Llama 2</span>
+                                <span class="text-xs bg-pink-900/30 text-pink-400 px-2 py-1 rounded">Falcon</span>
+                                <span class="text-xs bg-pink-900/30 text-pink-400 px-2 py-1 rounded">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        A maternity chatbot trained on unstructured maternal health literature to provide accurate, context-aware, and pointwise responses.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Achieved <span class="font-semibold">97% contextual accuracy</span> and <span class="font-semibold">88.65% response relevance</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-language text-blue-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Integrated multilingual support (English, Hindi, Marathi) with voice-based I/O</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>2024
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BrailleEcho -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-eye text-neon-blue text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">BrailleEcho</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-blue-900/30 text-blue-400 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-blue-900/30 text-blue-400 px-2 py-1 rounded">TensorFlow</span>
+                                <span class="text-xs bg-blue-900/30 text-blue-400 px-2 py-1 rounded">OpenCV</span>
+                                <span class="text-xs bg-blue-900/30 text-blue-400 px-2 py-1 rounded">TTS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Machine learning-based system for recognizing Braille and converting it to text and voice output.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Utilized <span class="font-semibold">CNNs</span> achieving <span class="font-semibold">93% accuracy</span> in Braille recognition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microphone text-purple-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Integrated <span class="font-semibold">text-to-speech</span> module for accessibility</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-laptop-code text-orange-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Developed user-friendly <span class="font-semibold">Flask interface</span></span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>2023
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Steganography -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-purple-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-lock text-neon-purple text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">Digital Steganography</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-purple-900/30 text-purple-400 px-2 py-1 rounded">Java</span>
+                                <span class="text-xs bg-purple-900/30 text-purple-400 px-2 py-1 rounded">JSP</span>
+                                <span class="text-xs bg-purple-900/30 text-purple-400 px-2 py-1 rounded">JDBC</span>
+                                <span class="text-xs bg-purple-900/30 text-purple-400 px-2 py-1 rounded">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Developed a steganography system that securely embeds text or images within multimedia files using the Least Significant Bit (LSB) technique.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Implemented sender-receiver interface with Java Servlets, JDBC, and MySQL</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-server text-blue-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Deployed on Tomcat Server with web-based interface using JSP, HTML, CSS, and JavaScript</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>Feb 2025
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automated Time Table Scheduler -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-calendar-alt text-neon-green text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">Automated Time Table Scheduler</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">Java</span>
+                                <span class="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">MySQL</span>
+                                <span class="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">JSP</span>
+                                <span class="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">Servlets</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Developed a web-based scheduling system using Genetic Algorithms to optimize faculty and class timetables.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Ensured constraint handling with MySQL-backed data storage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dna text-purple-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Integrated real-time fitness evaluations and chromosome selection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-table text-blue-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">AJAX-powered dynamic input forms for seamless user experience</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>2023
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PrepMatte -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-yellow-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-comments text-yellow-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">PrepMatte</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-yellow-900/30 text-yellow-400 px-2 py-1 rounded">Next.js</span>
+                                <span class="text-xs bg-yellow-900/30 text-yellow-400 px-2 py-1 rounded">Drizzle ORM</span>
+                                <span class="text-xs bg-yellow-900/30 text-yellow-400 px-2 py-1 rounded">PostgreSQL</span>
+                                <span class="text-xs bg-yellow-900/30 text-yellow-400 px-2 py-1 rounded">Gemini AI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Interactive app enabling users to practice interviews by recording answers and receiving AI-driven feedback.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Designed robust backend with <span class="font-semibold">Drizzle ORM</span> and <span class="font-semibold">PostgreSQL</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-brain text-blue-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Integrated <span class="font-semibold">Gemini AI</span> for generating interview questions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-red-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Implemented <span class="font-semibold">webcam</span> and <span class="font-semibold">microphone</span> features</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>2024
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AIRES -->
+                <div class="project-card cyber-card p-8 rounded-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-900/30 p-3 rounded-lg mr-4">
+                            <i class="fas fa-server text-red-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-200">AIRES</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-red-900/30 text-red-400 px-2 py-1 rounded">XGBoost</span>
+                                <span class="text-xs bg-red-900/30 text-red-400 px-2 py-1 rounded">TensorFlow</span>
+                                <span class="text-xs bg-red-900/30 text-red-400 px-2 py-1 rounded">Flask</span>
+                                <span class="text-xs bg-red-900/30 text-red-400 px-2 py-1 rounded">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Distributed computing platform that dynamically allocates resources using ML prediction models.
+                    </p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Achieved <span class="font-semibold">92% accuracy</span> in forecasting resource availability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-bolt text-yellow-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Improved system throughput by <span class="font-semibold">73%</span> and reduced completion times by <span class="font-semibold">40%</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-tachometer-alt text-blue-400 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Developed real-time monitoring dashboard</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>2023
+                            </span>
+                            <a href="#" class="text-neon-blue hover:text-neon-pink text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/50 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+                </h2>
+                <div class="w-24 h-1 bg-white mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="cyber-card p-8 rounded-xl bg-black/50 backdrop-blur-md">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-white/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <a href="mailto:onkar.kolekar23@vit.edu" class="text-white/80 hover:text-white">onkar.kolekar23@vit.edu</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Alternate Email</h4>
+                                <a href="mailto:kolekaronkar073@gmail.com" class="text-white/80 hover:text-white">kolekaronkar073@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <a href="tel:+918847785339" class="text-white/80 hover:text-white">+91 8847785339</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/20 p-3 rounded-lg mr-4">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/onkar-kolekar-92371b2ba" target="_blank" class="text-white/80 hover:text-white">linkedin.com/in/onkar-kolekar</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white/20 p-3 rounded-lg mr-4">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">GitHub</h4>
+                                <a href="https://github.com/Onkar17-73" target="_blank" class="text-white/80 hover:text-white">github.com/onkarkolekar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cyber-card p-8 rounded-xl bg-black/50 backdrop-blur-md">
+                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white/90 text-black border border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent placeholder-gray-600" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white/90 text-black border border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent placeholder-gray-600" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/90 text-black border border-neon-blue focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent placeholder-gray-600" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 neon-border">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 text-white py-8 neon-border-t">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-bold gradient-text mb-4 md:mb-0">
+                    <i class="fas fa-robot mr-2"></i>Onkar Kolekar
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="https://www.linkedin.com/in/onkar-kolekar-92371b2ba" target="_blank" class="text-xl hover:text-neon-blue transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-xl hover:text-white transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:onkar.kolekr23@vit.edu" class="text-xl hover:text-neon-pink transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="text-sm text-gray-400">
+                    &copy; 2024 Onkar Kolekar. All Rights Reserved.
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
+                <p>Built with <i class="fas fa-heart text-neon-pink"></i> and the latest web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00f0ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00f0ff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+
+        // Animate project cards
+        gsap.utils.toArray('.project-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 30,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: "back.out(1.7)"
+            });
+        });
+
+        // Animate skill pills
+        gsap.utils.toArray('.skill-pill').forEach((pill, i) => {
+            gsap.from(pill, {
+                scrollTrigger: {
+                    trigger: pill,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                x: -20,
+                duration: 0.4,
+                delay: i * 0.05,
+                ease: "power1.out"
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Floating animation for profile image
+        gsap.to(".floating", {
+            y: 15,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Typewriter effect
+        const typewriterText = document.querySelector('.typewriter');
+        if (typewriterText) {
+            const texts = [
+                "AI/ML Engineer",
+                "Full Stack Developer",
+                "Tech Innovator",
+                "Python Expert",
+                "LLM Specialist"
+            ];
+            let currentTextIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let isEnd = false;
+
+            function type() {
+                const currentText = texts[currentTextIndex];
+                
+                if (isDeleting) {
+                    typewriterText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    isEnd = true;
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    setTimeout(type, 500);
+                } else {
+                    const typingSpeed = isDeleting ? 50 : 100;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            setTimeout(type, 1000);
+        }
+
+        // Add glitch effect to headings on hover
+        document.querySelectorAll('.glitch').forEach(glitch => {
+            glitch.addEventListener('mouseenter', () => {
+                glitch.classList.add('glitch-effect');
+            });
+            glitch.addEventListener('mouseleave', () => {
+                glitch.classList.remove('glitch-effect');
+            });
+        });
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('.cyber-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
